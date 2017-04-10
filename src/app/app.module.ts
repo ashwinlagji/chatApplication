@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { AuthModule } from './auth-module/auth-module.module';
+import { FirebaseModule } from './firebase';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +15,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    FirebaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

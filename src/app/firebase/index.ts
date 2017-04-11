@@ -1,16 +1,21 @@
-import { AngularFireModule, AuthMethods } from 'angularfire2';
+import {
+    AngularFireModule,
+    AuthMethods
+} from 'angularfire2';
 
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDaEW83qAOozjJbbJP1YYbEHxxfFksdSHQ',
-  authDomain: 'ng2-todo-app.firebaseapp.com',
-  databaseURL: 'https://ng2-todo-app.firebaseio.com',
-  storageBucket: 'ng2-todo-app.appspot.com'
+    apiKey: "AIzaSyDzBG5ErnfBtDJ0tJ0w5IGNtQbsrgaCYC0",
+    authDomain: "blogdesign-f58de.firebaseapp.com",
+    databaseURL: "https://blogdesign-f58de.firebaseio.com",
+    projectId: "blogdesign-f58de",
+    storageBucket: "blogdesign-f58de.appspot.com",
+    messagingSenderId: "284917816696"
 };
 
 const firebaseAuthConfig = {
-  method: AuthMethods.Popup,
-  remember: 'default'
+    method: AuthMethods.Popup,
+    remember: 'default'
 };
 
 

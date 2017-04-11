@@ -1,0 +1,24 @@
+<h3>
+{{message}}
+</h3>
+<form (ngSubmit)="login()">
+    <div class="input-group">
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email">
+    </div>
+    <div class="input-group">
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
+    </div>
+    <input type="submit" class="btn btn-default" value="Log In">
+</form>
+
+<div>
+    <div>
+        <a (click)='signIn("Google")'>Google</a>
+    </div>
+    <div>
+        <a (click)='signIn("Facebook")'>Facebook</a>
+    </div>
+    <div>
+        <a (click)='signIn("Github")'>Github</a>
+    </div>
+</div>

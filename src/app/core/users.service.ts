@@ -11,9 +11,23 @@ import {
 @Injectable()
 export class UsersService {
     private Users: FirebaseListObservable < any > ;
+    private loggedInUser: any = null; 
 
     constructor(private af: AngularFire) {
         this.Users = this.af.database.list('/users');
+    }
+    
+    saveLoggedInUserDetails(userDetails): void {
+        
+        this.loggedInUser = userDetails;
+    }
+    
+    get getloggedInUser():any{
+        return this.loggedInUser;
+    }
+    
+    get getAll(){
+        return this.Users;
     }
 
     getDisplayName(id: String): String {
@@ -37,6 +51,13 @@ export class UsersService {
                     AvatarUrl
                 });
             }
+            
+            this.saveLoggedInUserDetails({
+                    Id,
+                    Name,
+                    Email,
+                    AvatarUrl
+                });
         });
         
     }

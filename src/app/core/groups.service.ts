@@ -15,4 +15,14 @@ export class GroupsService {
     constructor(private af: AngularFire) {
         this.Groups = this.af.database.list('/groups');
     }
+    
+    createGroup(Name){
+        this.Groups.push({
+            Name
+        })
+    }
+    
+    get getAll(){
+        return this.Groups;
+    }
 }

@@ -15,14 +15,19 @@ import { HomeComponent } from './home/home.component';
 import { AuthResolver } from './resolvers/auth.resolver';
 import { AuthService } from "./auth-module/auth.service";
 import { UsersService } from './core/users.service';
+import { GroupsService } from './core/groups.service';
 
 import { routes } from './routes';
+import { GroupsComponent } from './groups/groups.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    GroupsComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { routes } from './routes';
     FirebaseModule,
     RouterModule.forRoot(routes)
   ],
-    providers: [AuthResolver, AuthService, UsersService],
+  providers: [AuthResolver, AuthService, UsersService, GroupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

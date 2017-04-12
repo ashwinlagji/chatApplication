@@ -16,6 +16,10 @@ import { AuthResolver } from './resolvers/auth.resolver';
 import { AuthService } from "./auth-module/auth.service";
 import { UsersService } from './core/users.service';
 import { GroupsService } from './core/groups.service';
+import { MessageService } from './core/messages.service';
+import { GroupMessagesResolve } from './resolvers/group-messages.resolver';
+import { UserMessagesResolve } from './resolvers/user-messages.resolver';
+
 
 import { routes } from './routes';
 import { GroupsComponent } from './groups/groups.component';
@@ -36,7 +40,7 @@ import { MessageComponent } from './message/message.component';
     FirebaseModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthResolver, AuthService, UsersService, GroupsService],
+    providers: [AuthResolver, AuthService, UsersService, GroupsService, MessageService, UserMessagesResolve, GroupMessagesResolve],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,17 +1,14 @@
 <p>
   groups works!
 </p>
-    <nav>
-    <a (click)="onSelect('abc')" routerLinkActive="active">Crisis Center</a>
-    <a (click)="onSelect('xyz')" routerLinkActive="active">Heroes</a>
-  </nav>
-  <router-outlet></router-outlet>
 
 <div >
     <ul>
-    <li *ngFor="let group of groups"> {{
-        group.Name
-        }}</li>
+    <li *ngFor="let group of groups"> 
+        <a [routerLink]="['group',group.Name,'messages']">{{
+            group.Name
+            }}</a>
+        </li>
     </ul>
     <form (ngSubmit)="createGroup()">
         <div >

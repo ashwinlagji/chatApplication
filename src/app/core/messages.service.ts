@@ -15,22 +15,23 @@ export class MessageService {
     }
 
     getGroupMessages(group) {
-
-        return this.af.database.list('/messages/' + group);
-
+        return this.af.database.list('/messages/group/' + group);
     }
     
-    getUserMessages(user1, User2) {
-        
-        let databasePathref = (user1.Id > User2.Id: user1.Id + User2.Id ? User2.Id + user1.Id);
-        
-        return this.af.database.list('/messages/' +databasePathref);
+    getUserMessages(user1, user2) {
+        let databasePathref = (user1 > user2)? (user1 + user2) : (user2 + user1);
+        return this.af.database.list('/messages/users/' +databasePathref);
 
     }
 
-    sendMessage(type, message){
-        
-        this.af.database.list('/messages/' + type).push(message);
+    sendGroupMessage(type, message){
+        this.af.database.list('/messages/group/' + type).push(message);
+    }
+    
+    sendUserMessage(user1, user2, message){
+        let databasePathref = (user1 > user2)? (user1 + user2) : (user2 + user1);
+        this.af.database.list('/messages/users/' + databasePathref).push(message);
+
     }
     
 }

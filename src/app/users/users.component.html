@@ -1,0 +1,21 @@
+<p>
+  users works!
+</p>
+<div>
+    <label>Users</label>
+    <ul>
+        <li *ngFor="let user of users">
+             <a [routerLink]="['user',user.Id,'messages']">{{
+           user.Id
+            }}</a>
+            {{user}}
+        </li>
+    </ul>
+    <!--<ul>
+    <li *ngFor="let group of groups"> 
+        <a [routerLink]="['group',group.Name,'messages']">{{
+            group.Name
+            }}</a>
+        </li>
+    </ul>-->
+</div>

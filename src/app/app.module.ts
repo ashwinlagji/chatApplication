@@ -24,6 +24,7 @@ import { UserMessagesResolve } from './resolvers/user-messages.resolver';
 import { routes } from './routes';
 import { GroupsComponent } from './groups/groups.component';
 import { MessageComponent } from './message/message.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MessageComponent } from './message/message.component';
     LoginComponent,
     HomeComponent,
     GroupsComponent,
-    MessageComponent
+    MessageComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

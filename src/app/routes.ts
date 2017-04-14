@@ -19,6 +19,7 @@ import {
 } from './message/message.component';
 import { GroupMessagesResolve } from './resolvers/group-messages.resolver';
 import { UserMessagesResolve } from './resolvers/user-messages.resolver';
+import { ProfileComponent } from './profile/profile.component';
 
 
 export const routes: Routes = [
@@ -38,16 +39,12 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'child-two',
+                redirectTo: 'Profile',
                 pathMatch: 'full'
             },
             {
-                path: 'child-one',
-                component: MessageComponent
-            },
-            {
-                path: 'child-two',
-                component: HomeComponent
+                path: 'Profile',
+                component: ProfileComponent
             },
             {
                 path: 'group/:groupName/messages',

@@ -24,12 +24,20 @@ export class AuthService {
     get id(): string {
         return this.authenticated ? this.authState.uid : '';
     }
-
-    signIn(provider: number) {
+    registerUser(email, password) {
+        return this.af.auth.createUser({
+            email: email,
+            password: password
+        });
+    }
+    signIn(user) {
         return this.af.auth.login({
-                provider
-            })
-            .catch(error => console.log('ERROR @ AuthService#signIn() :', error));
+            email: user.email,
+            password: user.password,
+        }, {
+            provider: AuthProviders.Password,
+            method: AuthMethods.Password,
+        }).catch(error => console.log('ERROR @ AuthService#signIn() :', error));
     }
 
     signInAnonymously() {
@@ -47,22 +55,22 @@ export class AuthService {
         }).catch(error => console.log('ERROR @ AuthService#signInWithGithub() :', error));
     }
 
-    loginWithGoogle() {
+    signInWithGoogle() {
         return this.af.auth.login({
             provider: AuthProviders.Google,
             method: AuthMethods.Popup,
         }).catch(error => console.log('ERROR @ AuthService#loginWithGoogle() :', error));
     }
 
-    loginWithFacebook() {
-        
+    signInWithFacebook() {
+
         return this.af.auth.login({
             provider: AuthProviders.Facebook,
             method: AuthMethods.Popup,
         }).catch(error => console.log('ERROR @ AuthService#loginWithFacebook() :', error));
     }
 
-    loginWithTwitter() {
+    signInWithTwitter() {
         return this.af.auth.login({
             provider: AuthProviders.Twitter,
             method: AuthMethods.Popup,

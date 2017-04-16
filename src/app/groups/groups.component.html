@@ -1,20 +1,17 @@
-<p>
-  groups works!
-</p>
-
-<div >
-    <ul>
-    <li *ngFor="let group of groups"> 
-        <a [routerLink]="['group',group.Name,'messages']">{{
+<div class="group">
+  <ul>
+    <li *ngFor="let group of groups">
+      <a [routerLink]="['group',group.Name,'messages']">{{
             group.Name
             }}</a>
-        </li>
-    </ul>
-    <form (ngSubmit)="createGroup()">
-        <div >
-            <input type="text"  placeholder="Channel Name" [(ngModel)]="newGroup.name" name="groupName">
-        </div>
-        <input type="submit"  value="Create Channel">
-</form>
-    
+    </li>
+    <li>
+        <form (ngSubmit)="createGroup()">
+          <div>
+            <input MdInput type="text" placeholder="Channel Name" [(ngModel)]="newGroup.name" name="groupName">
+          </div>
+          <input md-raised-button type="submit" value="Create Channel">
+        </form>
+    </li>
+  </ul>
 </div>

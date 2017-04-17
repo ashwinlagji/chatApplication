@@ -33,6 +33,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
 import {MdIconModule} from '@angular/material';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {MdIconModule} from '@angular/material';
     GroupsComponent,
     MessageComponent,
     UsersComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

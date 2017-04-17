@@ -9,6 +9,9 @@ import {
     LoginComponent
 } from './login/login.component';
 import {
+    RegisterComponent
+} from './register/register.component';
+import {
     HomeComponent
 } from './home/home.component';
 import {
@@ -62,5 +65,9 @@ export const routes: Routes = [
             }
 
             ]
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     }
 ];

@@ -6,12 +6,14 @@
             }}</a>
     </li>
     <li>
-        <form (ngSubmit)="createGroup()">
-          <div>
-            <input MdInput type="text" placeholder="Channel Name" [(ngModel)]="newGroup.name" name="groupName">
-          </div>
-          <input md-raised-button type="submit" value="Create Channel">
-        </form>
+            <md-input-container class="example-full-width">
+                <input mdInput type="text" placeholder="Create Group.. " class="form-control" [(ngModel)]="newGroup.name" name="groupName">
+                <div mdSuffix md-raised-button (click)="createGroup()">
+                    <md-icon>
+                        playlist add
+                    </md-icon>
+                </div>
+            </md-input-container>
     </li>
   </ul>
 </div>

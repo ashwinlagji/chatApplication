@@ -36,6 +36,13 @@ export class MessageComponent implements OnInit {
     newMessage = '';
     personalMessage = false;
     listAllMes: FirebaseListObservable < any > ;
+    userToChat = {
+        Name: "Loading ..",
+        Id: "Loading ..",
+        AvatarUrl: "",
+        Email: ""
+    };
+    
     constructor(private route: ActivatedRoute, private messageService: MessageService, private usersService: UsersService) {
 
     }
@@ -61,6 +68,11 @@ export class MessageComponent implements OnInit {
                 this.listAllMes.subscribe( data => {
                                       this.messages = data;
                                       });
+                const userToChatPromise = this.usersService.getDisplayName(this.id);
+                let self = this;
+                userToChatPromise.then( user => {
+                    self.userToChat = user
+                });
             }
 
             this.user = this.usersService.getloggedInUser;

@@ -1,11 +1,48 @@
 @import '~bourbon/app/assets/stylesheets/_bourbon'
 
+.main-section
+    width: 800px
+    margin: 20px auto
+    background-color: white
+    display: flex
+    flex-direction: column
+    
+    @media screen and (max-width: 800px)
+        width: auto
+        
+md-input-container
+    width: 100%
+
+    
+.input-cointainer
+    display: flex
+    align-items: center
+    div
+        &:first-child
+            margin-right: 10px
+        &:not(:first-child)
+            flex: 1
+    
+.header
+    display: flex
+    flex-grow: 1
+    height: 50px
+.footer
+    display: flex
+    flex-grow: 1
+    height: 50px
+    position: absolute
+    right: 0
+    bottom: 14px
+    left: 0
+    text-align: center
+
 .form-wrapper
     display: flex
     min-width: 800px
     margin: 10px auto
     padding: 10px 40px
-    background-color: #fafafa
+    background-color: white
 
     +transition(1s)
 
@@ -38,7 +75,8 @@
 
     .classic-login
         flex: 1
-        padding: 20px
+        padding: 0 20px
+        margin: 25px 0
     @media screen and (max-width: 600px)
         min-width: auto
         flex-direction: column
@@ -73,3 +111,14 @@
 
 .form-control:focus
     background-color: transparent
+    
+.remember-me
+    padding: 10px 2px
+.login-btn
+    padding: 10px 0
+    
+/* Icons Colors*/
+.person
+    color: red
+.lock
+    color: green

@@ -31,8 +31,10 @@ export class GroupsComponent implements OnInit {
   }
 
   createGroup(){
-      this.groupsService.createGroup(this.newGroup.name);
-      this.newGroup.name = '';
+      if(this.newGroup.name !== ''){
+            this.groupsService.createGroup(this.newGroup.name);
+            this.newGroup.name = '';
+      }
   }
 onSelect(id) {
     this.router.navigate(['/a', id]);

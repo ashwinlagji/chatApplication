@@ -1,10 +1,10 @@
 <div>
   <div>
-      <h4>{{id}}</h4>
+      <h4>{{userToChat.Name}}</h4>
     </div>
     <ul>
         <li *ngFor="let message of messages">
-            {{message.userName}}  {{message.timestamp}} : {{message.body}}
+            {{message.userName}}  {{message.timestamp | date : "shortTime"}} : {{message.body}}
         </li>
     </ul>
 </div>

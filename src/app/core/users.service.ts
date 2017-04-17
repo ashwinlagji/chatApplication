@@ -30,14 +30,19 @@ export class UsersService {
         return this.Users;
     }
 
-    getDisplayName(id: String): String {
+    getDisplayName(id: String): Promise<any> {
 
-        let displayName = "";
-        this.Users.subscribe((users) => {
-            console.log("Users Found...." + users);
-        })
-
-        return "Display_Name";
+        let US = this.Users;
+        return new Promise(function(resolve,reject){
+            let displayName = "";
+            US.subscribe((users) => {
+                for(let user of users){
+                    if (id === user.Id)
+                        resolve(user);
+                }
+                reject("not found");
+            });
+        });
     }
     saveDisplayName(Id, Name, Email, AvatarUrl) {
 

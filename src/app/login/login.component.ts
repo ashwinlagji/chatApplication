@@ -26,19 +26,44 @@ export class LoginComponent {
     message = "Login Component";
     email: string;
     password: string;
-    remail: string;
-    rpassword: string;
 
 
     constructor(private authService: AuthService, private usersService: UsersService, private router: Router) {}
     ngOnInit() {}
 
     signIn(name: string) {
-        const promise = this.authService.signInWithGoogle();
-        promise.then(result => {
-            this.usersService.saveDisplayName(result.uid, result.auth.displayName, result.auth.email, result.auth.photoURL);
-            this.router.navigate(['home']);
-        });
+
+        if (name === 'Google') {
+
+            const promise = this.authService.signInWithGoogle();
+            promise.then(result => {
+                this.usersService.saveDisplayName(result.uid, result.auth.displayName, result.auth.email, result.auth.photoURL);
+                this.router.navigate(['home']);
+            });
+        }else if (name === 'Twitter') {
+
+            const promise = this.authService.signInWithTwitter();
+            promise.then(result => {
+                this.usersService.saveDisplayName(result.uid, result.auth.displayName, result.auth.email, result.auth.photoURL);
+                this.router.navigate(['home']);
+            });
+        } else if (name === 'Facebook') {
+
+            const promise = this.authService.signInWithFacebook();
+            promise.then(result => {
+                this.usersService.saveDisplayName(result.uid, result.auth.displayName, result.auth.email, result.auth.photoURL);
+                this.router.navigate(['home']);
+            });
+        }else if (name === 'Github') {
+
+            const promise = this.authService.signInWithGithub();
+            promise.then(result => {
+                this.usersService.saveDisplayName(result.uid, result.auth.displayName, result.auth.email, result.auth.photoURL);
+                this.router.navigate(['home']);
+            });
+        }else {
+            
+        }
     }
 
     login() {
@@ -47,19 +72,9 @@ export class LoginComponent {
             password: this.password
         });
         promise.then(result => {
+            console.log(result)
             this.usersService.saveDisplayName(result.uid, result.auth.displayName, result.auth.email, result.auth.photoURL);
             this.router.navigate(['home']);
-        });
-    }
-
-    register() {
-        const promise = this.authService.registerUser(
-            this.remail,
-            this.rpassword
-        );
-        promise.then(result => {
-            this.usersService.saveDisplayName(result.uid, result.auth.displayName, result.auth.email, result.auth.photoURL);
-            this.router.navigate(['login']);
         });
     }
 }

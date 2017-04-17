@@ -1,62 +1,82 @@
-<div layout="column" ng-cloak>
-  <div class="form-wrapper">
-    <div class="oauth-section">
+<header class="header">
+    <md-toolbar color="primary">
+        
+    </md-toolbar>
+</header>
+<div class="main-section">
 
-      <div>
-        <a class="btn btn-block btn-social btn-twitter" (click)='signIn("Twitter")'>
-          <span class="fa fa-twitter"></span> Sign in with Twitter
-        </a>
-      </div>
-      <div>
-        <a class="btn btn-block btn-social btn-facebook" (click)='signIn("Facebook")'>
-          <span class="fa fa-facebook"></span> Sign in with Facebook
-        </a>
-      </div>
-      <div>
-        <a class="btn btn-block btn-social btn-google" (click)='signIn("Google")'>
-          <span class="fa fa-google"></span> Sign in with Google
-        </a>
-      </div>
-      <div>
-        <a class="btn btn-block btn-social btn-github" (click)='signIn("Github")'>
-          <span class="fa fa-github"></span> Sign in with Github
-        </a>
-      </div>
+    <div class="info-section">
     </div>
-    <div class="seperator">
-      <div>OR</div>
-    </div>
-    <div class="classic-login">
-      <form class="example-form" (ngSubmit)="login()">
-        <div>
-          <md-input-container class="example-full-width">
-            <input required mdInput type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email" >
-          </md-input-container>
-        </div>
-        <div>
-          <md-input-container class="example-full-width">
-            <md-icon mdPrefix>home</md-icon>
-            <input required mdInput type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password" required>
-          </md-input-container>
-        </div>
-        <div>
-            <md-checkbox  > Remember Me </md-checkbox>
-        </div>
-        <div>
-            <button md-raised-button type="submit">LOGIN</button>
-        </div>
-      </form>
-    </div>
+    <div class="login-section">
 
-  </div>
+        <div layout="column" ng-cloak>
+            <div class="form-wrapper">
+                <div class="oauth-section">
+
+                    <div>
+                        <a class="btn btn-block btn-social btn-twitter" (click)='signIn("Twitter")'>
+                            <span class="fa fa-twitter"></span> Sign in with Twitter
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn btn-block btn-social btn-facebook" (click)='signIn("Facebook")'>
+                            <span class="fa fa-facebook"></span> Sign in with Facebook
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn btn-block btn-social btn-google" (click)='signIn("Google")'>
+                            <span class="fa fa-google"></span> Sign in with Google
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn btn-block btn-social btn-github" (click)='signIn("Github")'>
+                            <span class="fa fa-github"></span> Sign in with Github
+                        </a>
+                    </div>
+                </div>
+                <div class="seperator">
+                    <div>OR</div>
+                </div>
+                <div class="classic-login">
+                    <form class="example-form" (ngSubmit)="login()">
+                        <div class="input-cointainer">
+                            <div><md-icon mdPrefix class="person">person</md-icon></div>
+                            <div><md-input-container class="example-full-width">
+                                <input required mdInput type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email">
+                                </md-input-container></div>
+                            
+                        </div>
+                        <div class="input-cointainer">
+                            <div><md-icon mdPrefix class="lock">lock</md-icon></div>
+                            <div><md-input-container class="example-full-width">
+                                <input required mdInput type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password" required>
+                                </md-input-container>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <div class="remember-me">
+                                <md-checkbox> Remember Me </md-checkbox>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <div class="login-btn">
+                                <button md-raised-button type="submit">LOGIN</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
-
-<form (ngSubmit)="register()">
-  <div class="input-group">
-    <input type="email" class="form-control" placeholder="Register Email" [(ngModel)]="remail" name="remail">
-  </div>
-  <div class="input-group">
-    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="rpassword" name="rpassword">
-  </div>
-  <input type="submit" class="btn btn-default" value="Register">
-</form>
+<footer class="footer">
+    <md-toolbar color="primary">
+        <div>Build with <span class="love">♥</span> by the&nbsp;
+            <a href="https://github.com/ashwinlagji">
+                Lagji's  </a> &copy; 2017   </div>
+        
+    </md-toolbar>
+</footer>
